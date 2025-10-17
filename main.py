@@ -7,6 +7,12 @@ import httpx
 
 app = FastAPI()
 
+
+@app.get("/")
+async def root():
+    return {"message": "Server is running", "status": "ok"}
+
+
 async def fetch_cat_fact() -> str:
     """Fetch a random cat fact from Cat Facts API with error handling."""
     try:
